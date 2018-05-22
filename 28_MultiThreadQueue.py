@@ -21,7 +21,8 @@ def process_data(threadName, q):
       if not workQueue.empty():
          data = q.get()
          queueLock.release()
-         print ("%s processing %s" % (threadName, data))
+         if data is "Two":
+            print ("%s processing %s" % (threadName, data))
       else:
          queueLock.release()
          time.sleep(1)
@@ -45,6 +46,8 @@ queueLock.acquire()
 for word in nameList:
    workQueue.put(word)
 queueLock.release()
+
+
 
 # Wait for queue to empty
 while not workQueue.empty():
