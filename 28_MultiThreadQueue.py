@@ -57,3 +57,47 @@ exitFlag = 1
 for t in threads:
    t.join()
 print ("Exiting Main Thread")
+
+
+
+# import threading
+# import time
+#
+# class myThread (threading.Thread):
+#    def __init__(self, threadID, name, list):
+#       threading.Thread.__init__(self)
+#       self.threadID = threadID
+#       self.name = name
+#       self.list = list
+#    def run(self):
+#       print ("Starting " + self.name)
+#       # Get lock to synchronize threads
+#       #threadLock.acquire()
+#       print_time(self.name, 2, self.list)
+#       # Free lock to release next thread
+#       #threadLock.release()
+#
+# def print_time(threadName, delay, counter):
+#    for a in counter:
+#       time.sleep(delay)
+#       print ("%s: %s %s" % (threadName, time.ctime(time.time()),a))
+#       pass
+#
+#
+# threadLock = threading.Lock()
+# threads = []
+#
+# # Create new threads
+# thread1 = myThread(1, "Thread-1", ["test1.txt","test2.txt","test3.txt"])
+# thread2 = myThread(1, "Thread-2", ["test4.txt","test5.txt","test6.txt"])
+#
+# threads.append(thread1)
+# threads.append(thread2)
+#
+# for t in threads:
+#    t.start()
+#
+# # Wait for all threads to complete
+# for t in threads:
+#    t.join()
+# print ("Exiting Main Thread")
